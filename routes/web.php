@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Mycontroller;
+use App\Http\Controllers\TestController;
+use App\Http\Controllers\formController;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -69,16 +72,35 @@ use App\Http\Controllers\Mycontroller;
 
 //  })->where('id','[0-9]+');
 
- Route::get ('/name/{name}/age/{age}',function ($name,$age)
- {
-    echo "Name:".$name . "  age: ". $age;
+//  Route::get ('/name/{name}/age/{age}',function ($name,$age)
+//  {
+//     echo "Name:".$name . "  age: ". $age;
 
- })->where(['name'=>'[A-Za-z]+','age'=>'[0-9]+']); 
+//  })->where(['name'=>'[A-Za-z]+','age'=>'[0-9]+']); 
  
- Route::fallback(function()
- {
-    echo "This URL is Not Allowed in this Application";
+//  Route::fallback(function()
+//  {
+//     echo "This URL is Not Allowed in this Application";
 
- });
+//  });
+// Route::get('processdata',[TestController::class,'testdata']);
+
+
+// Route::view('userpage','user');
+ 
+// Route::post ('processform',function(Request $req)
+// {
+//    echo $req->t1. " ". $req->t2;
+
+// });
+
+// Route::post ('getformdata',[TestController::class, 'processdata']);
+
+Route::view('userformpage' , 'userform');
+Route::post('puserform',[formController::class,'getdata']);
+
+
+
+
 
 
