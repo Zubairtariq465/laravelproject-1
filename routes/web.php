@@ -96,8 +96,11 @@ use Illuminate\Http\Request;
 
 // Route::post ('getformdata',[TestController::class, 'processdata']);
 
-Route::view('userformpage' , 'userform');
-Route::post('puserform',[formController::class,'getdata']);
+// Route::view('userformpage' , 'userform');
+// Route::post('puserform',[formController::class,'getdata']);
+  
+Route::view('formpage' , 'userform');
+Route::post('puserform',[formController::class,'getdata']); 
 
 
 

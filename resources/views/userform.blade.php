@@ -22,6 +22,28 @@
                     
                 @endif
 
+                @if (isset($records))
+                <table border="1">
+                  <tr style="background-color:antiquewhite ; color:blue" >
+                        <td>Name</td>
+                        <td>Email</td>
+
+                  </tr>
+
+                  @foreach ( $records as $item )
+
+                  <tr>
+                     <td>{{$item->name}}</td>
+                     <td>{{$item->email}}</td>
+                  </tr>
+                     
+                  @endforeach
+
+                    </table>
+                
+                    
+                @endif
+
 
 
 

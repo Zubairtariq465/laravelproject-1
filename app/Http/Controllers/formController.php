@@ -18,9 +18,15 @@ class formController extends Controller
         $tbl->email=$email;
         $tbl->save();
 
-        return redirect ('userformpage')->with ('msg','Data Succesfully Inserted');
+        // return redirect ('formpage')->with ('msg','Data Succesfully Inserted');
+        return $this->fetchdata();
         
         
+    }
+    function fetchdata()
+    {
+        $data=UserprocessModel::all();
+        return view('userform',['records'=>$data]);
     }
 
 
