@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Mycontroller;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\formController;
+use App\Http\Controllers\PsformController;
 use Illuminate\Http\Request;
 
 /*
@@ -98,9 +99,9 @@ use Illuminate\Http\Request;
 
 // Route::view('userformpage' , 'userform');
 // Route::post('puserform',[formController::class,'getdata']);
-  
+   
 Route::view('formpage' , 'userform');
-Route::post('puserform',[formController::class,'getdata']); 
+Route::post('puserform',[PsformController::class,'searchdata']); 
 
 
 
