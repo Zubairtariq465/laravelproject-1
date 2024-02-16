@@ -5,6 +5,7 @@ use App\Http\Controllers\Mycontroller;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\formController;
 use App\Http\Controllers\PsformController;
+use App\Http\Controllers\ProController;
 use Illuminate\Http\Request;
 
 /*
@@ -100,8 +101,9 @@ use Illuminate\Http\Request;
 // Route::view('userformpage' , 'userform');
 // Route::post('puserform',[formController::class,'getdata']);
    
-Route::view('formpage' , 'userform');
-Route::post('puserform',[PsformController::class,'searchdata']); 
+Route::view('formpage' , 'user');
+Route::post('processform',[ProController::class,'search']);
+
 
 
 

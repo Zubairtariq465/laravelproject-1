@@ -4,26 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <title>Client</title>
   </head>
   <body>
-    <center>
-    <form action="getformdata" method="post" >
-        @csrf
-
-        <input type="text" name="t1" id="" placeholder="Enter the name"> <br>
-        <input type="text" name="t2" id="" placeholder="Enter the Password"> <br>
-        <input type="submit" value="Click Me">
-
-
-
-
-
-
-
-
-
+ <center>
+  <div class="container">
+    <h2>User Verification Form</h2>
+    <form action="processform" method="post">
+      @csrf
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+      </div>
+      <div class="form-group">
+        <label for="pwd">Password:</label>
+        <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+      </div>
+      <button type="submit" class="btn btn-default">Submit</button>
     </form>
-    </center>
+  </div>
+  @if (Session('success'))
+  <div class="alert alert-success">
+    <strong>{{Session('success')}}</strong> 
+  </div>
+      
+  @endif
+  @if (Session('error'))
+  <div class="alert alert-danger">
+    <strong>{{Session('error')}} </strong> 
+  </div>
+  
+      
+  @endif
+
+
+
+
+
+
+ </center>
   </body>
   </html>
