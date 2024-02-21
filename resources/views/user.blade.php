@@ -28,7 +28,7 @@
   </div>
   @if (Session('success'))
   <div class="alert alert-success">
-    <strong>{{Session('success')}}</strong> 
+    <strong>{{Session('success')}}</strong>  
   </div>
       
   @endif

@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\UserModel;
+use App\Models\NModel;
 
 use Illuminate\Http\Request;
 
@@ -12,7 +12,7 @@ class ProController extends Controller
         $email=$req->email;
         $pwd=$req->pwd;
 
-    $result=UserModel::where('email',$email)
+    $result=NModel::where('email',$email)
     ->where('enrollment', $pwd)
     ->get();
 
